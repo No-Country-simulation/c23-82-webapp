@@ -6,7 +6,8 @@ import tseslint from 'typescript-eslint';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default [
   {
@@ -16,14 +17,15 @@ export default [
   ...tseslint.configs.recommended,
   {
     files: ['**/*.{ts,tsx}'],
-    ignores: ['vite.config.ts'],
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: 'module',
       parser: tseslint.parser,
       parserOptions: {
-        project: ['./tsconfig.app.json'],
-        tsconfigRootDir: __dirname,
+        projectService: {
+          rootDir: __dirname,
+          tsConfigPath: './tsconfig.json',
+        },
       },
       globals: {
         ...globals.browser,
@@ -46,8 +48,10 @@ export default [
       sourceType: 'module',
       parser: tseslint.parser,
       parserOptions: {
-        project: ['./tsconfig.node.json'],
-        tsconfigRootDir: __dirname,
+        projectService: {
+          rootDir: __dirname,
+          tsConfigPath: './tsconfig.node.json',
+        },
       },
     },
     plugins: {
