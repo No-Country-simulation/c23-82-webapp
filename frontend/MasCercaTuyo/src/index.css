@@ -34,6 +34,10 @@ body {
     /* 5px */
 }
 
+button {
+    border-radius: 20%;
+}
+
 .google {
     background-color: #dd4b39;
     color: white;

@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
-import { FacebookAuthProvider } from 'firebase/auth/web-extension';
 import { useState } from 'react';
 import './App.css';
 import { auth } from './firebase/firebase';
@@ -43,15 +42,15 @@ function App() {
     }
   };
 
-  const handleFacebookSignIn = async () => {
-    // Handle Facebook sign-in
-    try {
-      await signInWithPopup(auth, new FacebookAuthProvider());
-      // Handle successful Facebook sign-in
-    } catch (error) {
-      setError('Error al registrarse con Facebook.');
-    }
-  }
+  // const handleFacebookSignIn = async () => {
+  //   // Handle Facebook sign-in
+  //   try {
+  //     await signInWithPopup(auth, new FacebookAuthProvider());
+  //     // Handle successful Facebook sign-in
+  //   } catch (error) {
+  //     setError('Error al registrarse con Facebook.');
+  //   }
+  // }
 
   return (
     <>
@@ -59,22 +58,22 @@ function App() {
         <img src="/svg/logo.svg" alt="logo" />
       </div>
       <div className="flex items-center justify-center">
-        <h3 className="text-3xl font-bold text-center mt-5 ">¡Bienvenido(a)!</h3>
+        <h3 className="text-3xl font-bold text-center mt-5 ">Â¡Bienvenido(a)!</h3>
         <img src="/img/ola.png" className="w-10 h-10 ml-2"></img>
       </div>
-      <h3 className="text-3xl text-center">Inicia sesión</h3>
+      <h3 className="text-3xl text-center">Inicia sesiÃ³n</h3>
       <form className='flex flex-col items-center justify-center mt-5' name="login" id="login">
-        <label htmlFor="Email" >Correo Electronico</label>
+        <label htmlFor="Email" className='place-items-start' >Correo ElectrÃ­nico</label>
         <br />
         <input type='email' id='Email' placeholder='Correo Electronico' required className='w-1/2 p-2 border border-gray-300 rounded mb-4 bg-white' onChange={(e) => setEmail(e.target.value)} />
         <br />
-        <label htmlFor='Password'>Contraseña</label>
+        <label htmlFor='Password'>ContraseÃ±a</label>
         <br />
-        <input type='password' id='Password' placeholder='Contraseña' required className='w-1/2 p-2 border border-gray-300 rounded mb-4 bg-white' onChange={(e) => setPassword(e.target.value)} />
+        <input type='password' id='Password' placeholder='ContraseÃ±a' required className='w-1/2 p-2 border border-gray-300 rounded mb-4 bg-white' onChange={(e) => setPassword(e.target.value)} />
         <br />
-        <a href="#" className="text-blue-500 ">¿Olvidaste tu contraseña?</a>
+        <a href="#" className="text-blue-500 ">Â¿Olvidaste tu contraseÃ±a?</a>
         <br />
-        <button type='submit' id='submit' className='w-1/2 p-2 bg-blue-500 text-white rounded '>Iniciar Sesión</button>
+        <button style={{ borderRadius: '15px' }} type='submit' id='submit'>Iniciar SesiÃ³n</button>
       </form>
       <div className="flex items-center justify-center">
         <h3 className="text-3xl text-center mt-5">O</h3>
@@ -106,12 +105,13 @@ function App() {
         <label
         // className="text-center"
         >
-          ¿No tienes cuenta?
+          Â¿No tienes cuenta?
         </label>
         <br />
         <a
           href='#'
           id='create'
+          style={{ borderRadius: '15px' }}
         >
           Crear Cuenta
         </a>
