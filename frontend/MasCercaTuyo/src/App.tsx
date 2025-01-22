@@ -11,6 +11,7 @@ function App() {
   const [error, setError] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const validatePassword = (pwd: string) => {
     const regex = /^(?=.*[A-Z])(?=.*[@._-]).{8,}$/;
@@ -42,19 +43,13 @@ function App() {
     }
   };
 
-  // const handleFacebookSignIn = async () => {
-  //   // Handle Facebook sign-in
-  //   try {
-  //     await signInWithPopup(auth, new FacebookAuthProvider());
-  //     // Handle successful Facebook sign-in
-  //   } catch (error) {
-  //     setError('Error al registrarse con Facebook.');
-  //   }
-  // }
-
   return (
     <>
-      <div className=" items-center justify-center flex mt-10">
+      <div className="
+      items-center
+      justify-center
+      flex
+      mt-10">
         <img src="/svg/logo.svg" alt="logo" />
       </div>
       <div className="flex items-center justify-center">
@@ -62,34 +57,44 @@ function App() {
         <img src="/img/ola.png" className="w-10 h-10 ml-2"></img>
       </div>
       <h3 className="text-3xl text-center">Inicia sesión</h3>
-      <form className='flex flex-col items-center justify-center mt-5' name="login" id="login">
+      <form className='flex flex-col mt-5 card p-10 shadow-lg' name="login" id="login">
         <label htmlFor="Email" className='place-items-start' >Correo Electrínico</label>
         <br />
-        <input type='email' id='Email' placeholder='Correo Electronico' required className='w-1/2 p-2 border border-gray-300 rounded mb-4 bg-white' onChange={(e) => setEmail(e.target.value)} />
+        <input type='email' id='Email' placeholder='Ingresa tu Correo' required className='w-1/2 p-2 border border-gray-300 rounded mb-4 bg-white' style={{ width:'100%' }} onChange={(e) => setEmail(e.target.value)} />
         <br />
         <label htmlFor='Password'>Contraseña</label>
         <br />
-        <input type='password' id='Password' placeholder='Contraseña' required className='w-1/2 p-2 border border-gray-300 rounded mb-4 bg-white' onChange={(e) => setPassword(e.target.value)} />
+        <div className="relative">
+          <input
+            type={showPassword ? 'text' : 'password'}
+            id='Password'
+            placeholder='Contraseña'
+            required
+            className='w-1/2 p-2 border border-gray-300 rounded mb-4 bg-white'
+            style={{ width:'100%' }}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="absolute right-2 top-2"
+          >
+            {showPassword ? 'Hide' : 'Show'}
+          </button>
+        </div>
         <br />
-        <a href="#" className="text-blue-500 ">¿Olvidaste tu contraseña?</a>
+        <a href="#" className="text-blue-500" style={{ textAlign: 'end' }}>¿Olvidaste tu contraseña?</a>
         <br />
-        <button style={{ borderRadius: '15px' }} type='submit' id='submit'>Iniciar Sesión</button>
+        <button style={{ borderRadius: '20px', backgroundColor: '#FDF2CF' }} type='submit' id='submit' onClick={handleSubmit} >Iniciar Sesión</button>
       </form>
       <div className="flex items-center justify-center">
-        <h3 className="text-3xl text-center mt-5">O</h3>
+        <h3 className="text-3xl text-center mt-5">O Inicia Sesíon con</h3>
       </div>
       <form className="flex flex-col items-center justify-center mt-5 card p-6 shadow-lg">
         {error && <p className="error">{error}</p>}
         {/* <button type="submit" className="btn">Login</button> */}
         {/* <div className="divider">O</div> */}
         <div className="flex items-center justify-center space-x-4">
-          {/* <button
-            type="button"
-            className="facebook"
-            onClick={handleFacebookSignIn}
-          >
-            <img src="/svg/facebook.svg" alt="facebook" />
-          </button> */}
           <button
             type="button"
             className="google"
@@ -108,10 +113,11 @@ function App() {
           ¿No tienes cuenta?
         </label>
         <br />
+        <br />
         <a
           href='#'
           id='create'
-          style={{ borderRadius: '15px' }}
+          style={{ borderRadius: '15px', backgroundColor: '#EBFFE1' }}
         >
           Crear Cuenta
         </a>
