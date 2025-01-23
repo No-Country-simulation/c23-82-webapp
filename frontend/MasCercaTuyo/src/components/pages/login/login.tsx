@@ -2,7 +2,7 @@
 
 import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { useState } from 'react';
-import './App.css';
+import '../../../App.css';
 import { auth } from '../../../firebase/firebase';
 function Login() {
 
@@ -60,7 +60,7 @@ function Login() {
       <form className='flex flex-col mt-5 card p-10 shadow-lg' name="login" id="login">
         <label htmlFor="Email" className='place-items-start' >Correo Electrínico</label>
         <br />
-        <input type='email' id='Email' placeholder='Ingresa tu Correo' required className='w-1/2 p-2 border border-gray-300 rounded mb-4 bg-white' style={{ width:'100%' }} onChange={(e) => setEmail(e.target.value)} />
+        <input type='email' id='Email' placeholder='Ingresa tu Correo' required className='w-1/2 p-2 border border-gray-300 rounded mb-4 bg-white' style={{ width: '100%' }} onChange={(e) => setEmail(e.target.value)} />
         <br />
         <label htmlFor='Password'>Contraseña</label>
         <br />
@@ -71,7 +71,7 @@ function Login() {
             placeholder='Contraseña'
             required
             className='w-1/2 p-2 border border-gray-300 rounded mb-4 bg-white'
-            style={{ width:'100%' }}
+            style={{ width: '100%' }}
             onChange={(e) => setPassword(e.target.value)}
           />
           <button
@@ -108,7 +108,7 @@ function Login() {
         //  className='flex flex-col items-center justify-center'
         id='createAccount'>
         <label
-          // className="text-center"
+        // className="text-center"
         >
           ¿No tienes cuenta?
         </label>
