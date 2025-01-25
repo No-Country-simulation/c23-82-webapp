@@ -6,8 +6,6 @@ import '../../../App.css';
 import { auth } from '../../../firebase/firebase';
 function Login() {
 
-  // const [userName, setUserName] = useState('');
-  // const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -56,9 +54,9 @@ function Login() {
         <h3 className="text-3xl font-bold text-center mt-5 ">¡Bienvenido(a)!</h3>
         <img src="/img/ola.png" className="w-10 h-10 ml-2"></img>
       </div>
-      <h3 className="text-3xl text-center">Inicia sesión</h3>
+      <h3 className="text-3xl text-center">Inicia sesíon</h3>
       <form className='flex flex-col mt-5 card p-10 shadow-lg' name="login" id="login">
-        <label htmlFor="Email" className='place-items-start' >Correo Electrínico</label>
+        <label htmlFor="Email" className='place-items-start' >Correo Electrónico</label>
         <br />
         <input type='email' id='Email' placeholder='Ingresa tu Correo' required className='w-1/2 p-2 border border-gray-300 rounded mb-4 bg-white' style={{ width: '100%' }} onChange={(e) => setEmail(e.target.value)} />
         <br />
@@ -85,7 +83,7 @@ function Login() {
         <br />
         <a href="#" className="text-blue-500" style={{ textAlign: 'end' }}>¿Olvidaste tu contraseña?</a>
         <br />
-        <button style={{ borderRadius: '20px', backgroundColor: '#FDF2CF' }} type='submit' id='submit' onClick={handleSubmit} >Iniciar Sesión</button>
+        <button style={{ borderRadius: '20px', backgroundColor: '#FDF2CF' }} type='submit' id='submit' onClick={handleSubmit} >Iniciar Sesíon</button>
       </form>
       <div className="flex items-center justify-center">
         <h3 className="text-3xl text-center mt-5">O Inicia Sesíon con</h3>
