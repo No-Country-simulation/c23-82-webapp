@@ -50,9 +50,12 @@ function profile() {
                 id="btn-opciones-perfil"
                 onClick={toggleMenu}
                 ref={buttonRef}
-                style={{ background: 'none', border: 'none', cursor: 'pointer' }} // Added styles for better button appearance
+                style={{
+                    cursor: 'pointer',
+                    padding: '10%',
+                }}
             >
-                <img src="img/flecha-hacia-abajo-para-navegar.png" alt="" style={{ width: '1rem' }} />
+                <img src="img/flecha-hacia-abajo-para-navegar.png" alt="Menu" style={{ width: '2rem', height: '2rem' }} />
             </button>
             {isMenuVisible && (
                 <div ref={menuRef}>

@@ -8,8 +8,22 @@ function Likes() {
 
     return (
         <div style={{ display: "flex", gap: "1rem" }}>
-            <div>{seguidores}</div>
-            <div>{seguidos}</div>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+                <label>
+                    {seguidores}
+                </label>
+                <label>
+                    Seguidores
+                </label>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+                <label>
+                    {seguidos}
+                </label>
+                <label>
+                    Seguidos
+                </label>
+            </div>
         </div>
     )
 }
