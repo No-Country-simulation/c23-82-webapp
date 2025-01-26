@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Menufrotante from "../menufrotante/menufrotante";
 
 function profile() {
-    const [nombre, setNombre] = useState('Usuario');
+    const [nombre, setNombre] = useState('');
     const [isMenuVisible, setIsMenuVisible] = useState(false);
 
     const menuRef = useRef<HTMLDivElement>(null);
