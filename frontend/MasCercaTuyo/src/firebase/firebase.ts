@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { getAnalytics } from "firebase/analytics";
+// import { getAnalytics } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDvcrzaRro60K-TcgskcWbycp0bIqjoQFc",
@@ -12,6 +12,8 @@ const firebaseConfig = {
     measurementId: "G-9DWM7LRTLP"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
+const auth = getAuth(app);
+
+export { app, auth };
