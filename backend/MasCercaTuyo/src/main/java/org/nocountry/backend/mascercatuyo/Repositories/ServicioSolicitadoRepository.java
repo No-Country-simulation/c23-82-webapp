@@ -8,6 +8,4 @@ import java.util.List;
 
 @Repository
 public interface ServicioSolicitadoRepository extends JpaRepository<ServicioSolicitado, Long> {
-    // Por ejemplo, buscar por estado
-    List<ServicioSolicitado> findByStatus(String status);
 }

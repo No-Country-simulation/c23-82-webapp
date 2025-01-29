@@ -20,11 +20,6 @@ public class Usuario {
 
     private String domicilio;
     private String telefono;
-
-    @ManyToOne
-    @JoinColumn(name = "id_tipo", nullable = false)
-    private TipoUsuario tipoUsuario;
-
     private String alias;
     private String correo;
     private String contrasena;
@@ -38,5 +33,5 @@ public class Usuario {
 
     private Boolean disponibilidad;
     private String token;
-    //private String urlPhotoProfile; //TODO: ES UN NUEVO CAMPO EN EL POST/GET DE USUARIO, SOLO EL NOMBRE (chanchitoFeliz.jpg), nada de urls
+    private String imagen;
 }

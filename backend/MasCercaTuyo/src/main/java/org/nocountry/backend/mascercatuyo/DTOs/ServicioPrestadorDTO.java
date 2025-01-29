@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ServicioDTO {
+public class ServicioPrestadorDTO {
     private Long id;
     //TODO:como hago con las categorias?
     private String categoria;

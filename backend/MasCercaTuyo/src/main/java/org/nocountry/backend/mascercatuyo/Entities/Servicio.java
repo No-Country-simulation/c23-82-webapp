@@ -2,7 +2,13 @@ package org.nocountry.backend.mascercatuyo.Entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.*;
+
+import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
 @Data
@@ -13,10 +19,9 @@ public class Servicio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String nombreServicios;
-    private Double costo;
-
-    @OneToMany(mappedBy = "servicio", cascade = CascadeType.ALL)
-    private List<ServicioSolicitado> serviciosSolicitados;
+    private String categoria;
+    private String descripcion;
+    private String estado;
+    private Double tiempoEstimado;
+    private BigDecimal costo;
 }
