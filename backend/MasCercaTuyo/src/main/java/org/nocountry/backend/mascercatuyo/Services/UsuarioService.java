@@ -54,7 +54,6 @@ public class UsuarioService {
 
             usuario.setNombreApellido(usuarioDto.getNombreApellido());
             usuario.setDomicilio(usuarioDto.getDomicilio());
-            usuario.setTelefono(usuarioDto.getTelefono());
             usuario.setAlias(usuarioDto.getAlias());
             usuario.setCorreo(usuarioDto.getCorreo());
             usuario.setFechaNacimiento(usuarioDto.getFechaNacimiento());
@@ -84,7 +83,6 @@ public class UsuarioService {
         dto.setId(usuario.getId());
         dto.setNombreApellido(usuario.getNombreApellido());
         dto.setDomicilio(usuario.getDomicilio());
-        dto.setTelefono(usuario.getTelefono());
         dto.setAlias(usuario.getAlias());
         dto.setCorreo(usuario.getCorreo());
         dto.setContraseña(usuario.getContrasena());
@@ -98,7 +96,6 @@ public class UsuarioService {
         Usuario usuario = new Usuario();
         usuario.setNombreApellido(dto.getNombreApellido());
         usuario.setDomicilio(dto.getDomicilio());
-        usuario.setTelefono(dto.getTelefono());
         usuario.setAlias(dto.getAlias());
         usuario.setCorreo(dto.getCorreo());
         usuario.setContrasena(dto.getContraseña());

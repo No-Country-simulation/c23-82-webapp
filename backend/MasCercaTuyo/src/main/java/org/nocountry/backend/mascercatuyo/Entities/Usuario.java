@@ -19,7 +19,6 @@ public class Usuario {
     private String nombreApellido;
 
     private String domicilio;
-    private String telefono;
     private String alias;
     private String correo;
     private String contrasena;
