@@ -54,7 +54,7 @@ function Login() {
         <h3 className="text-3xl font-bold text-center mt-5 ">¡Bienvenido(a)!</h3>
         <img src="/img/ola.png" className="w-10 h-10 ml-2"></img>
       </div>
-      <h3 className="text-3xl text-center">Inicia sesíon</h3>
+      <h3 className="text-3xl text-center">Inicia sesión</h3>
       <form className='flex flex-col mt-5 card p-10 shadow-lg' name="login" id="login">
         <label htmlFor="Email" className='place-items-start' >Correo Electrónico</label>
         <br />
@@ -77,7 +77,7 @@ function Login() {
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-2 top-2"
           >
-            {showPassword ? 'Hide' : 'Show'}
+            {showPassword ? <img className="w-6 h-6" src="/img/visible.png" alt="Show" /> : <img className="w-6 h-6" src="/img/esconder.png" alt="Hide" />}
           </button>
         </div>
         <br />
