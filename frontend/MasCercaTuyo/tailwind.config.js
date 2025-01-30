@@ -7,4 +7,8 @@ export default {
     extend: {},
   },
   plugins: [daisyui],
+  daisyui: {
+    themes: [], // Esto desactiva los temas predeterminados de DaisyUI
+    base: false,
+  },
 };
