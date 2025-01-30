@@ -1,13 +1,17 @@
-import { useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { uploadPhoto } from '../../services/api.service';
+import { uploadPhoto } from '../../../services/api.service';
 
-const UploadPhoto = ({ onImageUpload }) => {
-  const [image, setImage] = useState(null);
+interface UploadPhotoProps {
+  onImageUpload: (url: string) => void;
+}
+
+const UploadPhoto: React.FC<UploadPhotoProps> = ({ onImageUpload }) => {
+  const [image, setImage] = useState<string | null>(null);
   console.log('image', image);
 
   const onDrop = useCallback(
-    async acceptedFiles => {
+    async (acceptedFiles: File[]) => {
       const file = acceptedFiles[0];
       setImage(URL.createObjectURL(file));
 
@@ -24,7 +28,7 @@ const UploadPhoto = ({ onImageUpload }) => {
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
-    accept: ['image/*'],
+    accept: { 'image/*': [] },
     multiple: false,
   });
 

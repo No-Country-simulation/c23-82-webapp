@@ -1,5 +1,5 @@
-import UploadPhoto from '../../ui/UploadPhoto';
-import Input from '../../ui/Input';
+import UploadPhoto from '../../UI/uploadphoto/UploadPhoto';
+import Input from '../../UI/input/Input';
 import { IoIosArrowBack } from 'react-icons/io';
 import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
@@ -36,7 +36,6 @@ function Register() {
         imagen: data.image_url || '',
       };
 
-      console.log(formattedData);
       const response = await registerUser(formattedData);
       console.log('Registro exitoso:', response);
     } catch (error) {
