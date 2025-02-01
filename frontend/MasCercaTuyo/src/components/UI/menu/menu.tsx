@@ -42,7 +42,7 @@ function menu() {
             <Profile />
             <Likes />
             <Notifications />
-            <div style={{ display: "flex", flexDirection: "column" }}>
+            <div id="location" style={{ display: "flex", flexDirection: "column" }}>
                 {location}
             </div>
         </div>

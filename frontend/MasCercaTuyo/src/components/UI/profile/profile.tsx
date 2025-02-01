@@ -1,9 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react-hooks/rules-of-hooks */
 import { useEffect, useRef, useState } from "react";
 import Menufrotante from "../menufrotante/menufrotante";
 
-function profile() {
+const Profile = () => {
     const [nombre, setNombre] = useState('');
     const [isMenuVisible, setIsMenuVisible] = useState(false);
 
@@ -12,7 +10,7 @@ function profile() {
 
     const toggleMenu = () => {
         setIsMenuVisible(!isMenuVisible);
-    }
+    };
 
     const opcionesMenu = [
         { texto: 'Registro', liga: '/register' },
@@ -35,27 +33,26 @@ function profile() {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, [menuRef, buttonRef]);
+    }, []);
 
     return (
-        <div className="border" style={{ padding: '.2rem 1.5rem', borderRadius: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
-            <img src="img/usuario.png" alt="" style={{
-                width: '2rem'
-            }} />
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', }}>
-                <h3>¡Hola!</h3>
-                <p>{nombre}</p>
+        <div className="border p-2 rounded-xl flex justify-between items-center gap-4 lg:gap-2">
+            <img src="img/usuario.png" alt="Usuario" className="w-10 h-10 lg:w-6 lg:h-6" />
+            <div className="flex flex-col items-center">
+                <h3 className="text-base lg:text-sm">¡Hola!</h3>
+                <p className="text-base lg:text-sm">{nombre}</p>
             </div>
             <button
                 id="btn-opciones-perfil"
                 onClick={toggleMenu}
                 ref={buttonRef}
-                style={{
-                    cursor: 'pointer',
-                    padding: '10%',
-                }}
+                className="cursor-pointer p-2 z-10"
             >
-                <img src="img/flecha-hacia-abajo-para-navegar.png" alt="Menu" style={{ width: '2rem', height: '2rem' }} />
+                <img
+                    src="img/flecha-hacia-abajo-para-navegar.png"
+                    alt="Menu"
+                    className="w-24 h-16 lg:w-12 lg:h-8"
+                />
             </button>
             {isMenuVisible && (
                 <div ref={menuRef}>
@@ -66,7 +63,7 @@ function profile() {
                 </div>
             )}
         </div>
-    )
-}
+    );
+};
 
-export default profile
+export default Profile;

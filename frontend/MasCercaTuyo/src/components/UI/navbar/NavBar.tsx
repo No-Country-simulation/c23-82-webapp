@@ -27,7 +27,7 @@ export function NavBar() {
           }}
         >
           <img
-            src="img/categorias.webp"
+            src="img/category.png"
             alt={"category"}
             style={{
               width: "30px",
@@ -47,7 +47,7 @@ export function NavBar() {
           }}
         >
           <img
-            src="img/categorias.webp"
+            src="img/aboutme.png"
             alt={"category"}
             style={{
               width: "30px",
@@ -67,7 +67,7 @@ export function NavBar() {
           }}
         >
           <img
-            src="img/categorias.webp"
+            src="img/testimonios.png"
             alt={"category"}
             style={{
               width: "30px",
@@ -87,7 +87,7 @@ export function NavBar() {
           }}
         >
           <img
-            src="img/categorias.webp"
+            src="img/help.png"
             alt={"category"}
             style={{
               width: "30px",
