@@ -22,5 +22,5 @@ public class ServicioPrestadorDTO {
     @Positive(message = "El costo del servicio debe ser un valor positivo")
     @Column(precision = 10, scale = 2, nullable = false)
     private BigDecimal costo;
-    private Long idUsuario; //TODO: agregar usuario en el servicio del prestador
+    private Long idUsuario;
 }

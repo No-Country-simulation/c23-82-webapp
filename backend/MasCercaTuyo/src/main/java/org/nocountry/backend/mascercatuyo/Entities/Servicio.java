@@ -9,6 +9,7 @@ import java.util.*;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.nocountry.backend.mascercatuyo.DTOs.FuenteServicio;
 
 @Entity
 @Data
@@ -24,5 +25,8 @@ public class Servicio {
     private String estado;
     private Double tiempoEstimado;
     private BigDecimal costo;
-    private Long idUsuario; //TODO: terminar de añadir el usuario a la bd
+    private Long idUsuario;
+
+    @Enumerated(EnumType.STRING)
+    private FuenteServicio fuente;
 }

@@ -46,6 +46,7 @@ public class ServicioController {
     @PostMapping("/cliente")
     public ResponseEntity<ServicioSolicitanteDTO> createServicioSolicitante(@RequestBody ServicioSolicitanteDTO dto) {
         Servicio servicio = convertToEntity(dto);
+        servicio.setFuente(FuenteServicio.SOLICITANTE);
         Servicio savedServicio = servicioService.save(servicio);
         return ResponseEntity.status(HttpStatus.CREATED).body(convertToClienteDTO(savedServicio));
     }
@@ -54,6 +55,7 @@ public class ServicioController {
     @PostMapping("/prestador")
     public ResponseEntity<ServicioPrestadorDTO> createServicioPrestador(@RequestBody ServicioPrestadorDTO dto) {
         Servicio servicio = convertToEntity(dto);
+        servicio.setFuente(FuenteServicio.PRESTADOR);
         Servicio savedServicio = servicioService.save(servicio);
         return ResponseEntity.status(HttpStatus.CREATED).body(convertToPrestadorDTO(savedServicio));
     }
@@ -86,6 +88,14 @@ public class ServicioController {
     public List<ServicioSolicitarDTO> findAllByCategoria(@PathVariable String categoria) {
         List<Servicio> servicios = servicioRepository.findListaDeServiciosByCategoria(categoria);
         return servicios.stream().map(this::convertServicioToServicioSolicitarDTO).collect(Collectors.toList());
+    }
+
+    @CrossOrigin
+    @GetMapping("/fuente/{fuente}")
+    public List<ServicioDTO> getServiciosByFuente(@PathVariable FuenteServicio fuente) {
+        return servicioService.findByFuente(fuente).stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
     }
 
     private Servicio convertToEntity(ServicioSolicitanteDTO dto) {

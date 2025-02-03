@@ -1,5 +1,6 @@
 package org.nocountry.backend.mascercatuyo.Services;
 
+import org.nocountry.backend.mascercatuyo.DTOs.FuenteServicio;
 import org.nocountry.backend.mascercatuyo.DTOs.ServicioSolicitarDTO;
 import org.nocountry.backend.mascercatuyo.Entities.Servicio;
 import org.nocountry.backend.mascercatuyo.Repositories.ServicioRepository;
@@ -29,6 +30,10 @@ public class ServicioService {
 
     public void deleteById(Long id) {
         servicioRepository.deleteById(id);
+    }
+
+    public List<Servicio> findByFuente(FuenteServicio fuente) {
+        return servicioRepository.findByFuente(fuente);
     }
 
     public List<Servicio> findAllByCategoria(String categoria) {
