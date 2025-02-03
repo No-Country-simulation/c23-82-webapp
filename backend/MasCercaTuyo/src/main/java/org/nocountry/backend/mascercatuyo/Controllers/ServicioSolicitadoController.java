@@ -25,17 +25,20 @@ public class ServicioSolicitadoController {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    @CrossOrigin
     @GetMapping
     public List<ServicioSolicitadoDTO> getAllServiciosSolicitados() {
         return servicioSolicitadoService.findAll().stream().map(this::convertToDTO).collect(Collectors.toList());
     }
 
+    @CrossOrigin
     @GetMapping("/{id}")
     public ServicioSolicitadoDTO getServicioById(@PathVariable Long id) {
         Optional<ServicioSolicitado> servicioSolicitado = servicioSolicitadoService.findById(id);
         return servicioSolicitado.map(this::convertToDTO).orElse(null);
     }
 
+    @CrossOrigin
     @PostMapping
     public ServicioSolicitadoDTO createServicioSolicitado(@RequestBody ServicioSolicitadoDTO servicioSolicitadoDTO) {
         ServicioSolicitado servicioSolicitado = convertToEntity(servicioSolicitadoDTO);
@@ -43,6 +46,7 @@ public class ServicioSolicitadoController {
         return convertToDTO(savedServicio);
     }
 
+    @CrossOrigin
     @PutMapping("/{id}")
     public ServicioSolicitadoDTO updateServicio(@PathVariable Long id, @RequestBody ServicioSolicitadoDTO servicioSolicitadoDTO) {
         ServicioSolicitado servicioSolicitado = convertToEntity(servicioSolicitadoDTO);
@@ -51,6 +55,7 @@ public class ServicioSolicitadoController {
         return convertToDTO(updatedServicio);
     }
 
+    @CrossOrigin
     @DeleteMapping("/{id}")
     public void deleteServicioSolicitado(@PathVariable Long id) {
         servicioSolicitadoService.deleteById(id);

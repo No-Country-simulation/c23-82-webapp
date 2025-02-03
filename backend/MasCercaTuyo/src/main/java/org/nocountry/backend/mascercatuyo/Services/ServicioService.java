@@ -1,5 +1,6 @@
 package org.nocountry.backend.mascercatuyo.Services;
 
+import org.nocountry.backend.mascercatuyo.DTOs.ServicioSolicitarDTO;
 import org.nocountry.backend.mascercatuyo.Entities.Servicio;
 import org.nocountry.backend.mascercatuyo.Repositories.ServicioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,9 @@ public class ServicioService {
 
     public void deleteById(Long id) {
         servicioRepository.deleteById(id);
+    }
+
+    public List<Servicio> findAllByCategoria(String categoria) {
+        return servicioRepository.findListaDeServiciosByCategoria(categoria);
     }
 }

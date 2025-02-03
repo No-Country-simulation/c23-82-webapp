@@ -24,4 +24,5 @@ public class Servicio {
     private String estado;
     private Double tiempoEstimado;
     private BigDecimal costo;
+    private Long idUsuario; //TODO: terminar de añadir el usuario a la bd
 }

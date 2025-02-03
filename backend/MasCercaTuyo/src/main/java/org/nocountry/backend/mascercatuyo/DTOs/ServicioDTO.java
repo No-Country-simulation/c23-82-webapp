@@ -13,7 +13,6 @@ import java.math.BigDecimal;
 @Builder
 public class ServicioDTO {
     private Long id;
-    //TODO:como hago con las categorias?
     private String categoria;
     private String descripcion;
     private String estado;
@@ -22,4 +21,5 @@ public class ServicioDTO {
     @Positive(message = "El costo del servicio debe ser un valor positivo")
     @Column(precision = 10, scale = 2, nullable = false)
     private BigDecimal costo;
+    private Long idUsuario;
 }

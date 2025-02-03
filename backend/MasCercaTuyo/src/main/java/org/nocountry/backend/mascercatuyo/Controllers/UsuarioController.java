@@ -15,11 +15,13 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
+    @CrossOrigin
     @GetMapping
     public ResponseEntity<List<UsuarioDTO>> getAllUsuarios() {
         return ResponseEntity.ok(usuarioService.getAllUsuarios());
     }
 
+    @CrossOrigin
     @GetMapping("/{id}")
     public ResponseEntity<UsuarioDTO> getUsuarioById(@PathVariable Long id) {
         UsuarioDTO usuario = usuarioService.getUsuarioById(id);
@@ -29,12 +31,14 @@ public class UsuarioController {
         return ResponseEntity.notFound().build();
     }
 
+    @CrossOrigin
     @PostMapping
     public ResponseEntity<UsuarioDTO> createUsuario(@RequestBody UsuarioDTO usuarioDto) {
         UsuarioDTO createdUsuario = usuarioService.createUsuario(usuarioDto);
         return ResponseEntity.ok(createdUsuario);
     }
 
+    @CrossOrigin
     @PutMapping("/{id}")
     public ResponseEntity<UsuarioDTO> updateUsuario(@PathVariable Long id, @RequestBody UsuarioDTO usuarioDto) {
         UsuarioDTO updatedUsuario = usuarioService.updateUsuario(id, usuarioDto);
@@ -44,6 +48,7 @@ public class UsuarioController {
         return ResponseEntity.notFound().build();
     }
 
+    @CrossOrigin
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUsuario(@PathVariable Long id) {
         usuarioService.deleteUsuario(id);

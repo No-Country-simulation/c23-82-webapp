@@ -4,6 +4,8 @@ import org.nocountry.backend.mascercatuyo.DTOs.UsuarioDTO;
 import org.nocountry.backend.mascercatuyo.Entities.Usuario;
 import org.nocountry.backend.mascercatuyo.Repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +17,9 @@ public class UsuarioService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public List<UsuarioDTO> getAllUsuarios() {
         return usuarioRepository.findAll().stream().map(this::mapToDto).collect(Collectors.toList());
@@ -32,8 +37,9 @@ public class UsuarioService {
             throw new IllegalArgumentException("El ID debe ser nulo al crear un nuevo usuario.");
         }
 
-        Usuario savedUsuario = usuarioRepository.save(usuario);
+        usuario.setContrasena(passwordEncoder.encode(usuarioDto.getContraseña()));
 
+        Usuario savedUsuario = usuarioRepository.save(usuario);
         if (savedUsuario.getId() == null) {
             throw new IllegalStateException("El ID del Usuario no fue generado correctamente.");
         }
@@ -85,7 +91,6 @@ public class UsuarioService {
         dto.setDomicilio(usuario.getDomicilio());
         dto.setAlias(usuario.getAlias());
         dto.setCorreo(usuario.getCorreo());
-        dto.setContraseña(usuario.getContrasena());
         dto.setFechaNacimiento(usuario.getFechaNacimiento());
         dto.setDisponibilidad(usuario.getDisponibilidad());
         dto.setImagen(usuario.getImagen());
@@ -98,9 +103,13 @@ public class UsuarioService {
         usuario.setDomicilio(dto.getDomicilio());
         usuario.setAlias(dto.getAlias());
         usuario.setCorreo(dto.getCorreo());
-        usuario.setContrasena(dto.getContraseña());
         usuario.setFechaNacimiento(dto.getFechaNacimiento());
         usuario.setDisponibilidad(dto.getDisponibilidad());
+
+        if (dto.getContraseña() != null) {
+            usuario.setContrasena(passwordEncoder.encode(dto.getContraseña()));
+        }
+
         return usuario;
     }
 }

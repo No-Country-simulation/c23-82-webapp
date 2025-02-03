@@ -30,6 +30,8 @@ public class PingController {
                             schema = @Schema(implementation = ErrorApi.class))
             )
     })
+
+    @CrossOrigin
     @GetMapping("/ping")
     public String pong() {
         return "pong";

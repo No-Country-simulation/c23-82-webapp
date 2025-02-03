@@ -19,6 +19,7 @@ public class CategoriaController {
     @Autowired
     private CategoriaService categoriaService;
 
+    @CrossOrigin
     @GetMapping
     public List<CategoriaDTO> getAllCategorias() {
         return categoriaService.findAll().stream()
@@ -26,6 +27,7 @@ public class CategoriaController {
                 .collect(Collectors.toList());
     }
 
+    @CrossOrigin
     @GetMapping("/{id}")
     public ResponseEntity<CategoriaDTO> getServicioById(@PathVariable Long id) {
         Optional<Categoria> categoria = categoriaService.findById(id);
@@ -33,6 +35,7 @@ public class CategoriaController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @CrossOrigin
     @PostMapping
     public ResponseEntity<CategoriaDTO> createCategoria(@RequestBody CategoriaDTO dto) {
         Categoria categoria = convertToEntity(dto);
@@ -40,6 +43,7 @@ public class CategoriaController {
         return ResponseEntity.status(HttpStatus.CREATED).body(convertToDTO(savedCategoria));
     }
 
+    @CrossOrigin
     @PutMapping("/{id}")
     public ResponseEntity<CategoriaDTO> updateCateogoria(@PathVariable Long id, @RequestBody CategoriaDTO dto) {
         Optional<Categoria> existingCategoria = categoriaService.findById(id);
@@ -52,6 +56,7 @@ public class CategoriaController {
         return ResponseEntity.ok(convertToDTO(updatedCategoria));
     }
 
+    @CrossOrigin
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCategoria(@PathVariable Long id) {
         if (categoriaService.findById(id).isEmpty()) {

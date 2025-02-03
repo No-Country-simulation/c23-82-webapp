@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.*;
+import org.nocountry.backend.mascercatuyo.Entities.Usuario;
 
 import java.math.BigDecimal;
 
@@ -13,7 +14,6 @@ import java.math.BigDecimal;
 @Builder
 public class ServicioPrestadorDTO {
     private Long id;
-    //TODO:como hago con las categorias?
     private String categoria;
     private String descripcion;
     private String estado;
@@ -22,4 +22,5 @@ public class ServicioPrestadorDTO {
     @Positive(message = "El costo del servicio debe ser un valor positivo")
     @Column(precision = 10, scale = 2, nullable = false)
     private BigDecimal costo;
+    private Long idUsuario; //TODO: agregar usuario en el servicio del prestador
 }
