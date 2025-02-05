@@ -114,6 +114,7 @@ public class ServicioController {
                 .tiempoEstimado(dto.getTiempoEstimado())
                 .costo(dto.getCosto())
                 .idUsuario(dto.getIdUsuario())
+                .urlImagen(dto.getUrlImagen())
                 .build();
     }
 
@@ -135,6 +136,7 @@ public class ServicioController {
                 .tiempoEstimado(servicio.getTiempoEstimado())
                 .costo(servicio.getCosto())
                 .idUsuario(servicio.getIdUsuario())
+                .urlImagen(servicio.getUrlImagen())
                 .build();
     }
 
@@ -146,6 +148,7 @@ public class ServicioController {
                 .estado(servicio.getEstado())
                 .tiempoEstimado(servicio.getTiempoEstimado())
                 .costo(servicio.getCosto())
+                .urlImagen(servicio.getUrlImagen())
                 .build();
     }
 
@@ -156,6 +159,7 @@ public class ServicioController {
                 .estado(dto.getEstado())
                 .tiempoEstimado(dto.getTiempoEstimado())
                 .costo(dto.getCosto())
+                .urlImagen(dto.getUrlImagen())
                 .build();
     }
 

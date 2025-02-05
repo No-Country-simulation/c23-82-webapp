@@ -17,6 +17,7 @@ public class ServicioDTO {
     private String descripcion;
     private String estado;
     private Double tiempoEstimado;
+    private String urlImagen;
     @NotNull(message = "El costo del servicio no puede ser nulo")
     @Positive(message = "El costo del servicio debe ser un valor positivo")
     @Column(precision = 10, scale = 2, nullable = false)

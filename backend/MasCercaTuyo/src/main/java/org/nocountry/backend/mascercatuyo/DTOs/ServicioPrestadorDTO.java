@@ -23,4 +23,5 @@ public class ServicioPrestadorDTO {
     @Column(precision = 10, scale = 2, nullable = false)
     private BigDecimal costo;
     private Long idUsuario;
+    private String urlImagen;
 }

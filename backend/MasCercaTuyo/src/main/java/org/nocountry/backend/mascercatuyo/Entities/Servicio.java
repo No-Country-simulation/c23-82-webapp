@@ -26,6 +26,7 @@ public class Servicio {
     private Double tiempoEstimado;
     private BigDecimal costo;
     private Long idUsuario;
+    private String urlImagen;
 
     @Enumerated(EnumType.STRING)
     private FuenteServicio fuente;
