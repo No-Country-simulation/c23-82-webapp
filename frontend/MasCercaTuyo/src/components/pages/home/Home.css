@@ -1,0 +1,12 @@
+.gradient-background {
+    background-image: linear-gradient(
+      to bottom, /* Or to bottom, to left, etc. for direction */
+      #06100F 0%, /* Red at 0% */
+      #3D514F 16.67%, /* Yellow at 16.67% */
+      #566C6A 33.33%, /* Green at 33.33% */
+      #7B908E 50%, /* Cyan at 50% */
+      #BDC8C7 66.67%, /* Blue at 66.67% */
+      #DDE3E3 83.33%, /* Magenta at 83.33% */
+      #F1F4F4 100% /* Red at 100% (back to the start) */
+    );
+  }
