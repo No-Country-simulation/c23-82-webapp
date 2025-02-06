@@ -8,7 +8,7 @@ interface Props {
     padding?: string;
 }
 
-function card(props: Props) {
+function Card(props: Props) {
     return (
         <div className={`card border ${props.width} ${props.height} ${props.background} ${props.foreground} ${props.margin} ${props.padding}`}>
             {props.children}
@@ -16,4 +16,4 @@ function card(props: Props) {
     )
 }
 
-export default card;
+export default Card;
