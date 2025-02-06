@@ -1,5 +1,7 @@
 import { GoogleMap, Libraries, useLoadScript } from "@react-google-maps/api";
 import { useEffect, useRef, useState } from 'react';
+const GOOGLE_API_MAPS_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
+const GOOGLE_MAPS_ID = import.meta.env.VITE_GOOGLE_MAPS_ID;
 
 interface MapProps 
 {
@@ -29,14 +31,14 @@ const Map = ({ location }: MapProps) =>
   
     const { isLoaded, loadError } = useLoadScript(
     {
-        googleMapsApiKey: 'AIzaSyDC27K-FU3szXJ_wuTZlbIpawkPUDc54ug',
+        googleMapsApiKey: GOOGLE_API_MAPS_KEY,
         libraries: libraries
     });
 
     const mapOptions = 
     {
         disableDefaultUI: true,
-        mapId: '91a3afaffd486a3e' 
+        mapId: GOOGLE_MAPS_ID
     }
 
     const createRectangleMarkerContent = () => 
