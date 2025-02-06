@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@flaticon/flaticon-uicons": "^3.3.1",
+    "@react-google-maps/api": "^2.20.5",
     "axios": "^1.7.9",
     "firebase": "^11.1.0",
     "js-cookie": "^3.0.5",

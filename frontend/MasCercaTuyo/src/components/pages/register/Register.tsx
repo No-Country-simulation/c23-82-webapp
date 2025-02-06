@@ -4,6 +4,7 @@ import { IoIosArrowBack } from 'react-icons/io';
 import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
 import { registerUser } from '../../../services/api.service';
+import { Link } from 'react-router';
 
 interface IData {
     name: string,
@@ -51,7 +52,11 @@ function Register() {
     <div className="flex justify-center items-center">
       <form onSubmit={handleSubmit(onValid)} className="form-control w-full max-w-md p-4 gap-2">
         <div className="flex justify-center items-center mb-4">
-          <IoIosArrowBack className="font-semibold text-4xl" />
+          <Link to={"/"}>
+            <IoIosArrowBack className="font-semibold text-4xl" />
+          
+          </Link>
+          
           <h1 className="text-center text-4xl font-semibold mb-4 flex-1">Crear Cuenta</h1>
         </div>
 

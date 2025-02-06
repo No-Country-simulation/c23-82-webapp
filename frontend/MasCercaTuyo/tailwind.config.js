@@ -8,7 +8,8 @@ export default {
   },
   plugins: [daisyui],
   daisyui: {
-    themes: [], // Esto desactiva los temas predeterminados de DaisyUI
+    themes: ['light', 'dark'], // Esto desactiva los temas predeterminados de DaisyUI
     base: false,
-  },
+  },darkMode:"class"
 };
+

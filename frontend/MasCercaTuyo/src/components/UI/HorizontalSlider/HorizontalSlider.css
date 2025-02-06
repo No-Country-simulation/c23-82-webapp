@@ -1,0 +1,36 @@
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    /* border: 2px solid #ccc; */
+  }
+  
+  .image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(19, 18, 18, 0.7);
+    color: white;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-inline: 15px;
+    
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .scroll-button.left {
+    left: 10px;
+  }
+  
+  .scroll-button.right {
+    right: 10px;
+  }
