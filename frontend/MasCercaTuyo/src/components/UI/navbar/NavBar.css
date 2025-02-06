@@ -1,0 +1,12 @@
+.gradient-background-navbar {
+    background-image: linear-gradient(
+      to bottom, /* Or to bottom, to left, etc. for direction */
+      #878A8A 0%, /* Red at 0% */
+      #7C8383 16.67%, /* Yellow at 16.67% */
+      #687473 33.33%, /* Green at 33.33% */
+      #4D5F5E 50%, /* Cyan at 50% */
+      #384F4D 66.67%, /* Blue at 66.67% */
+      #213433 83.33%, /* Magenta at 83.33% */
+      #0B1716 100% /* Red at 100% (back to the start) */
+    );
+  }
