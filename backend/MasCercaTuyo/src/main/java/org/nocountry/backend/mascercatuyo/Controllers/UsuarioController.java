@@ -32,6 +32,16 @@ public class UsuarioController {
     }
 
     @CrossOrigin
+    @GetMapping("/info/{correo}")
+    public ResponseEntity<UsuarioDTO> getUsuarioByCorreo(@PathVariable("correo") String email) {
+        UsuarioDTO usuario = usuarioService.getUsuarioByCorreo(email);
+        if (usuario != null) {
+            return ResponseEntity.ok(usuario);
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @CrossOrigin
     @PostMapping
     public ResponseEntity<UsuarioDTO> createUsuario(@RequestBody UsuarioDTO usuarioDto) {
         UsuarioDTO createdUsuario = usuarioService.createUsuario(usuarioDto);

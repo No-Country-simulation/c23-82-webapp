@@ -1,6 +1,5 @@
 package org.nocountry.backend.mascercatuyo.DTOs;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,11 +9,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ServicioSolicitarDTO {
-    private Long servicioId;
+public class ServicioSolicitanteGeoDTO {
+    private Long id;
     private String categoria;
-    private String nombrePrestador;
+    private String descripcion;
+    private String estado;
+    private Long solicitanteId;
 
-    @JsonIgnore
-    private Boolean disponibilidad;
+    private Double latitude;
+    private Double longitude;
+
 }

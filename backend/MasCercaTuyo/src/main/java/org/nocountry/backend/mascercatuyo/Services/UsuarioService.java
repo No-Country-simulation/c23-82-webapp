@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,6 +29,21 @@ public class UsuarioService {
     public UsuarioDTO getUsuarioById(Long id) {
         Optional<Usuario> usuario = usuarioRepository.findById(id);
         return usuario.map(this::mapToDto).orElse(null);
+    }
+
+    @Transactional(readOnly = true)
+    public UsuarioDTO getUsuarioByCorreo(String email)
+    {
+        Optional<Usuario> optionalUsuario = usuarioRepository.findByCorreo(email);
+
+        if(optionalUsuario.isEmpty())
+        {
+            return null;
+        };
+
+        Usuario usuario = optionalUsuario.get();
+
+        return mapToDto(usuario);
     }
 
     public UsuarioDTO createUsuario(UsuarioDTO usuarioDto) {
