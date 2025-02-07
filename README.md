@@ -63,6 +63,13 @@ Ser la red líder en la conexión de servicios locales, transformando la manera 
 - **Back-end:** Java + Spring Boot
 - **Base de Datos:** MySQL
 
+## Equipo de Trabajo
+- **Front-end:** Barbara Fermin de Abreu, Carlos Ignacio Olano Mares.
+- **Back-end:** David Alejandro Ontivero.
+- **Diseñadora UX/UI:** Elizabeth Judith Prado Cabrera.
+- **QA Tester:** Luis David Asmat Ortega.
+- **Project Manager:** Nicolás Alejandro Boattini.
+
 ## 🎨 Proceso de Diseño
 El diseño de **Más Cerca Tuyo** se enfocó en la accesibilidad y la experiencia del usuario. Se trabajó en prototipos en **Figma**, creando un diseño amigable e intuitivo. Se priorizó una interfaz limpia, fácil de navegar y con colores que transmitan confianza y profesionalismo.
 
