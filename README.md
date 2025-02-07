@@ -7,7 +7,7 @@ Los profesionales locales, tanto formales como informales, enfrentan dificultade
 Este escenario crea una brecha significativa entre quienes necesitan servicios y quienes los ofrecen, dificultando la generación de oportunidades económicas locales y el acceso eficiente a servicios esenciales.
 
 ## 🎯 Propuesta
-**Más Cerca Tuyo** es una WebApp que actúa como una plataforma de prestacion de servicios exclusiva para la conexión de servicios locales en el hogar. Su objetivo principal es facilitar un intercambio eficiente y confiable entre trabajadores y clientes dentro de una misma comunidad o sector geográfico, promoviendo:
+**Más Cerca Tuyo** es una WebApp que actúa como una red social exclusiva para la conexión de servicios locales en el hogar. Su objetivo principal es facilitar un intercambio eficiente y confiable entre trabajadores y clientes dentro de una misma comunidad o sector geográfico, promoviendo:
 
 - **Accesibilidad:** Brindar a los clientes la posibilidad de encontrar servicios cercanos, priorizando la proximidad geográfica.
 - **Visibilidad:** Ofrecer a los trabajadores locales una plataforma para promocionar sus servicios y aumentar sus oportunidades de empleo.
@@ -22,7 +22,7 @@ Este escenario crea una brecha significativa entre quienes necesitan servicios y
 - Registro/Login de usuarios mediante credenciales tradicionales y OAuth con Google Firebase.
 
 ## 🔍 Descripción del Sistema
-La plataforma actúa como una plataforma de prestacion de servicios exclusiva para el hogar. Facilita la interacción entre dos tipos de usuarios:
+La plataforma actúa como una red social exclusiva para el hogar. Facilita la interacción entre dos tipos de usuarios:
 
 - **Trabajadores:** Personas que ofrecen servicios, indicando su especialización, disponibilidad y área de cobertura.
 - **Clientes:** Usuarios que solicitan servicios específicos mediante la publicación de trabajos.
